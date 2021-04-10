@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.eduardo.todo.domain.Todo;
 import com.eduardo.todo.repositories.TodoRepository;
+import com.eduardo.todo.resources.TodoResource;
 import com.eduardo.todo.services.exceptions.ObjectNotFoundException;
 
 @Service
@@ -47,6 +48,16 @@ public class TodoService {
 
 	public void delete(Integer id) {
 		repository.deleteById(id);
+	}
+
+	public Todo update(Integer id, Todo obj) {
+		Todo newObj = findById(id);
+		newObj.setTitulo(obj.getTitulo());
+		newObj.setDataParaFinalizar(obj.getDataParaFinalizar());
+		newObj.setDescricao(obj.getDescricao());
+		newObj.setFinalizado(obj.getFinalizado());
+		
+		return repository.save(newObj);
 	}
 
 }
