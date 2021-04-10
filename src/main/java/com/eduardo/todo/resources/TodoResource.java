@@ -1,5 +1,7 @@
 package com.eduardo.todo.resources;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,11 +18,25 @@ public class TodoResource {
 
 	@Autowired
 	private TodoService service;
-	
+
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<Todo> findById(@PathVariable Integer id ){
+	public ResponseEntity<Todo> findById(@PathVariable Integer id) {
 		Todo obj = service.findById(id);
 		return ResponseEntity.ok().body(obj);
 	}
+
 	
+	@GetMapping(value = "/open")
+	public ResponseEntity<List<Todo>> listOpen(){
+		
+		List<Todo> list = service.findAllOpen();
+		return ResponseEntity.ok().body(list);
+	}
+	
+	@GetMapping(value = "/closed")	
+	public ResponseEntity<List<Todo>> listClosed(){
+		List<Todo> list = service.findAllClosed();
+		return ResponseEntity.ok().body(list);
+		
+	}
 }
