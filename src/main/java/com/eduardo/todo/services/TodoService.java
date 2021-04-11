@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import com.eduardo.todo.domain.Todo;
 import com.eduardo.todo.repositories.TodoRepository;
-import com.eduardo.todo.resources.TodoResource;
 import com.eduardo.todo.services.exceptions.ObjectNotFoundException;
 
 @Service

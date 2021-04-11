@@ -18,6 +18,10 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.eduardo.todo.domain.Todo;
 import com.eduardo.todo.services.TodoService;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
+
 @RestController
 @RequestMapping(value = "/todos")
 public class TodoResource {
@@ -25,12 +29,14 @@ public class TodoResource {
 	@Autowired
 	private TodoService service;
 
+	@ApiOperation("Busca ToDo pelo Id")
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Todo> findById(@PathVariable Integer id) {
 		Todo obj = service.findById(id);
 		return ResponseEntity.ok().body(obj);
 	}
 
+	@ApiOperation("Busca todos os ToDo abertos")
 	@GetMapping(value = "/open")
 	public ResponseEntity<List<Todo>> listOpen() {
 
@@ -38,6 +44,7 @@ public class TodoResource {
 		return ResponseEntity.ok().body(list);
 	}
 
+	@ApiOperation("Busca todos os ToDo encerrados")
 	@GetMapping(value = "/close")
 	public ResponseEntity<List<Todo>> listClose() {
 
@@ -46,12 +53,18 @@ public class TodoResource {
 
 	}
 
+	@ApiOperation("Busca todos os ToDo")
 	@GetMapping
 	public ResponseEntity<List<Todo>> listAll() {
 		List<Todo> list = service.findAll();
 		return ResponseEntity.ok().body(list);
 	}
 
+	@ApiOperation("Cria um novo item ToDo")
+	@ApiResponses(value = { 
+			@ApiResponse(code = 200, message = "Item ToDo criado com sucesso!"),
+			@ApiResponse(code = 500, message = "Ocorreu um erro!"),
+			})
 	@PostMapping
 	public ResponseEntity<Todo> create(@RequestBody Todo obj) {
 		obj = service.create(obj);
@@ -60,22 +73,22 @@ public class TodoResource {
 
 		return ResponseEntity.created(uri).build();
 	}
-	
+
+	@ApiOperation("Delete um item Todo pelo Id")
 	@DeleteMapping(value = "/{id}")
-	public ResponseEntity<Void> delete(@PathVariable Integer id){
+	public ResponseEntity<Void> delete(@PathVariable Integer id) {
 		service.delete(id);
 		return ResponseEntity.noContent().build();
-				
+
 	}
 
+	@ApiOperation("Atualiza um item Todo pelo Id")
 	@PutMapping(value = "/{id}")
-	public ResponseEntity<Todo> update(@PathVariable Integer id, @RequestBody Todo obj){
-		
+	public ResponseEntity<Todo> update(@PathVariable Integer id, @RequestBody Todo obj) {
+
 		Todo newObj = service.update(id, obj);
-		
+
 		return ResponseEntity.ok().body(newObj);
 	}
-	
-	
 
 }

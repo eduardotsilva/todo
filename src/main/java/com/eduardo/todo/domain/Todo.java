@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import io.swagger.annotations.ApiModelProperty;
+
 @Entity
 public class Todo implements Serializable {
 	
@@ -16,8 +18,11 @@ public class Todo implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	@ApiModelProperty(value = "O título não pode ser vazio")
 	private String titulo;
+	@ApiModelProperty(value = "A descrição não pode ser vazia")
 	private String descricao;
+	@ApiModelProperty(value = "Data exemplo: 2021-00-00")
 	private LocalDate dataParaFinalizar;
 	private Boolean finalizado = false;
 	
