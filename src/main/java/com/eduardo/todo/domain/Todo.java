@@ -1,12 +1,14 @@
 package com.eduardo.todo.domain;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import io.swagger.annotations.ApiModelProperty;
 
@@ -22,15 +24,16 @@ public class Todo implements Serializable {
 	private String titulo;
 	@ApiModelProperty(value = "A descrição não pode ser vazia")
 	private String descricao;
-	@ApiModelProperty(value = "Data exemplo: 2021-00-00")
-	private LocalDate dataParaFinalizar;
+	@ApiModelProperty(value = "Formato dd/MM/yyyy")
+	@JsonFormat(pattern = "dd/MM/yyyy")
+	private Date dataParaFinalizar;
 	private Boolean finalizado = false;
 	
 	public Todo() {
-		super();
+		super(); 
 	}
 
-	public Todo(Integer id, String titulo, String descricao, LocalDate dataParaFinalizar, Boolean finalizado) {
+	public Todo(Integer id, String titulo, String descricao, Date dataParaFinalizar, Boolean finalizado) {
 		super();
 		this.id = id;
 		this.titulo = titulo;
@@ -63,11 +66,11 @@ public class Todo implements Serializable {
 		this.descricao = descricao;
 	}
 
-	public LocalDate getDataParaFinalizar() {
+	public Date getDataParaFinalizar() {
 		return dataParaFinalizar;
 	}
 
-	public void setDataParaFinalizar(LocalDate dataParaFinalizar) {
+	public void setDataParaFinalizar(Date dataParaFinalizar) {
 		this.dataParaFinalizar = dataParaFinalizar;
 	}
 
