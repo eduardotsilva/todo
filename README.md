@@ -21,7 +21,7 @@
 8. Aplicar Bootstrap no projeto frontend:heavy_check_mark:
 9. Persistir informações no banco de dados usando Spring Data JPA:heavy_check_mark:
 10. Usar o banco de dados H2 Database em uma API REST:heavy_check_mark:
-11. Construir sua primeira API REST com boas práticas de Engenharia de Software:heavy_check_mark:
+11. Construir sua API REST com boas práticas de Engenharia de Software:heavy_check_mark:
 12. Programação com Java 11:heavy_check_mark:
 
 ## Referências:
