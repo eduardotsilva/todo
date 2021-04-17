@@ -24,6 +24,9 @@
 11. Construir sua API REST com boas práticas de Engenharia de Software:heavy_check_mark:
 12. Programação com Java 11:heavy_check_mark:
 
+Complemento: 
+1. Swagger:heavy_check_mark:
+ 
 ## Referências:
 Esse projeto foi desenvolvido durante o curso: [Projeto Fullstack com Spring Boot 2 e Angular 11](https://www.udemy.com/course/fullstack-completo-angular-e-springboot/) 
 
