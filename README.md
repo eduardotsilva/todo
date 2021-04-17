@@ -16,7 +16,7 @@
 3. Consumir nossa API usando nosso Postman:heavy_check_mark:
 4. Consumir nossa API usando nosso o frontend:heavy_check_mark:
 5. Aprender os conceitos básicos de desenvolvimento web com as mais requisitadas tecnologias do mercado de TI:heavy_check_mark:
-6. Ampliar seus conhecimentos com desenvolvimento de software e aplicar as vagas do mercado:heavy_check_mark:
+6. Ampliar seus conhecimentos com desenvolvimento de software :heavy_check_mark:
 7. Aprender os conceitos de uma aplicação web:heavy_check_mark:
 8. Aplicar Bootstrap no projeto frontend:heavy_check_mark:
 9. Persistir informações no banco de dados usando Spring Data JPA:heavy_check_mark:
