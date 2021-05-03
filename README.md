@@ -30,5 +30,4 @@
 ## Referências:
 Esse projeto foi desenvolvido durante o curso: [Projeto Fullstack com Spring Boot 2 e Angular 11](https://www.udemy.com/course/fullstack-completo-angular-e-springboot/) 
 
-
-![alt Oracle Certified Associate, Java SE 8 Programmer](https://images.credly.com/size/340x340/images/a9848abf-f8bd-474d-a9b4-6086da11a916/Oracle_Associates_Badge__1_.png)
+![alt Oracle Certified Associate, Java SE 8 Programmer](https://images.credly.com/size/110x110/images/a9848abf-f8bd-474d-a9b4-6086da11a916/Oracle_Associates_Badge__1_.png)
